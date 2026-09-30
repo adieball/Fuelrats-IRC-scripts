@@ -2,6 +2,7 @@
 *
 # ...but descend into directories
 !*/
-# ...and track only mIRC scripts (plus this file)
+# ...and track only mIRC scripts, READMEs (plus this file)
 !*.mrc
+!*.md
 !.gitignore

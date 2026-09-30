@@ -736,18 +736,18 @@ alias load_translations {
   hadd -m13 da_hello hu Üdvözölünk az Üzemanyag Patkányoknál &clientNames&! Kérjük, értesítsen minket, amint a fenti utasításokat végrehajtotta. Ha bármilyen kérdése vagy aggálya van, kérjük, kérdezze meg.
   hadd -m13 da_hello nl Welkom bij de Fuel Rats, &clientNames&. Laat het ons weten als je de bovenstaande instructies hebt voltooid. Als je vragen of zorgen hebt, stel ze dan gerust.
 
-  hadd -m13 da_eng de &clientNames&, fühlst du dich wohl dabei, ohne Übersetzer auf Englisch zu schreiben? Falls nicht, kein Problem – wir machen gerne auf Deutsch weiter.
-  hadd -m13 da_eng es &clientNames&, ¿te sientes cómodo/a escribiendo en inglés sin usar un traductor? Si no, no hay problema: seguimos encantados en español.
-  hadd -m13 da_eng ru &clientNames&, вам удобно общаться на английском без переводчика? Если нет — ничего страшного, мы с радостью продолжим на русском.
-  hadd -m13 da_eng fr &clientNames&, êtes-vous à l'aise pour écrire en anglais sans traducteur ? Sinon, pas de souci : nous continuons volontiers en français.
-  hadd -m13 da_eng nb &clientNames&, er det greit for deg å skrive på engelsk uten oversetter? Hvis ikke, er det helt i orden – vi hjelper deg uansett.
-  hadd -m13 da_eng tr &clientNames&, çevirmen kullanmadan İngilizce yazışmak senin için rahat mı? Değilse sorun değil, Türkçe devam edebiliriz.
-  hadd -m13 da_eng cs &clientNames&, je pro tebe v pohodě psát anglicky bez překladače? Pokud ne, nevadí – rádi budeme pokračovat v češtině.
-  hadd -m13 da_eng pl &clientNames&, czy swobodnie porozumiewasz się po angielsku bez tłumacza? Jeśli nie, nie ma problemu – chętnie będziemy kontynuować po polsku.
-  hadd -m13 da_eng hu &clientNames&, kényelmes számodra fordító nélkül angolul írni? Ha nem, semmi gond – szívesen folytatjuk magyarul.
-  hadd -m13 da_eng nl &clientNames&, vind je het prettig om zonder vertaler in het Engels te chatten? Zo niet, geen probleem – we gaan graag verder in het Nederlands.
-  hadd -m13 da_eng pt &clientNames&, você se sente à vontade para conversar em inglês sem usar um tradutor? Se não, sem problema – continuamos com prazer em português.
-  hadd -m13 da_eng it &clientNames&, ti senti a tuo agio a scrivere in inglese senza traduttore? Se no, nessun problema: continuiamo volentieri in italiano.
+  hadd -m13 da_eng de &clientNames&, sprichst du Englisch?
+  hadd -m13 da_eng es ¿ &clientNames&, hablas inglés?
+  hadd -m13 da_eng ru &clientNames&, вы говорите по-английски?
+  hadd -m13 da_eng fr &clientNames&, parlez-vous anglais ?
+  hadd -m13 da_eng nb &clientNames&, snakker du engelsk?
+  hadd -m13 da_eng tr &clientNames&, İngilizce konuşabiliyor musun?
+  hadd -m13 da_eng cs &clientNames&, mluvíš anglicky?
+  hadd -m13 da_eng pl &clientNames&, czy możemy mówić po angielsku?
+  hadd -m13 da_eng hu &clientNames&, Beszélsz angolul?
+  hadd -m13 da_eng nl &clientNames&, spreek je engels?
+  hadd -m13 da_eng pt &clientNames&, você fala inglês?
+  hadd -m13 da_eng it &clientNames&, lei parla inglese?
 
   hadd -m13 da_offq en &clientNames& how are these modules going?
   hadd -m13 da_offq de &clientNames& wie läuft es mit den Modulen?

@@ -2,9 +2,10 @@
 *
 # ...but descend into directories
 !*/
-# ...and track only mIRC scripts, READMEs (plus this file)
+# ...and track only mIRC scripts, Markdown, PNG screenshots (plus this file)
 !*.mrc
 !*.md
+!*.png
 !.gitignore
 # ...except scripts SeraphIRC creates/copies directly in the scripts root
 /*.mrc

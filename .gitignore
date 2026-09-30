@@ -1,0 +1,7 @@
+# Ignore everything...
+*
+# ...but descend into directories
+!*/
+# ...and track only mIRC scripts (plus this file)
+!*.mrc
+!.gitignore

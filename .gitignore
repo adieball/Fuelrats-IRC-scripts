@@ -6,3 +6,5 @@
 !*.mrc
 !*.md
 !.gitignore
+# ...except scripts SeraphIRC creates/copies directly in the scripts root
+/*.mrc

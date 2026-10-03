@@ -213,7 +213,7 @@ alias -l DA_StartCrinst {
   var %video = $replace($DA_Text($iif($2 == crinst,crvideoody,crvideo),$3),&clientNames&,$5)
   var %end = $replace($DA_Text(crinstend,$3),&clientName&,$5)
 
-  .timerDA_crinst* off
+  DA_StopCrinst
   if ($hget(da_seq)) hfree da_seq
   hadd -m da_seq target $1
   if ($2 == crinst) {
@@ -241,8 +241,17 @@ alias DA_CrinstStep {
   else hfree da_seq
 }
 
+alias -l DA_StopCrinst {
+  ; Stops each sequence timer that is running. SeraphIRC 6.0.7+ errors on "/timer ... off"
+  ; for a timer that does not exist (even with a wildcard), so check each one first.
+  if ($timer(DA_crinst1)) .timerDA_crinst1 off
+  if ($timer(DA_crinst2)) .timerDA_crinst2 off
+  if ($timer(DA_crinst3)) .timerDA_crinst3 off
+  if ($timer(DA_crinst4)) .timerDA_crinst4 off
+}
+
 alias abort {
-  .timerDA_crinst* off
+  DA_StopCrinst
   if ($hget(da_seq)) hfree da_seq
   echo -ag crinst-sequence aborted
 }

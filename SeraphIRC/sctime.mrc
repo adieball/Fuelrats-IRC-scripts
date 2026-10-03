@@ -208,11 +208,13 @@ on ^*:TEXT:*:#:{
 
   var %segment = $SCTimeMatch $+ $chr(29) $+ $SCTimeC($color(whois)) $chr(40) $+ %times $+ $SCTimeC($color(whois)) $+ $chr(41) $+ $chr(15)
 
-  ; Nick with its channel prefix (@, +, ...), coloured with the nick colour if one is set
-  var %nickDisplay = $nick(#,$nick).pnick
-  var %nickColor = $nick(#,$nick).color
-  if (%nickColor isnum) var %nickDisplay = $SCTimeC(%nickColor) $+ %nickDisplay $+ $chr(15)
-  var %nickDisplay = < $+ %nickDisplay $+ >
+  ; Nick with its channel prefix (@, +, ...). Not coloured: mIRC colour numbers ignore the
+  ; theme, so dark ones are unreadable on a dark background.
+  ; Fall back to the plain nick if the nicklist lookup fails (seen in SeraphIRC 6.0.7)
+  var %pnick = $nick(#,$nick).pnick
+  if ($nick !isin %pnick) var %pnick = $nick
+  SCTimeDebugMsg nick: $nick pnick: $nick(#,$nick).pnick
+  var %nickDisplay = < $+ %pnick $+ >
 
   if (%SCTimeInline == $true) {
     var %subbedText
@@ -222,7 +224,7 @@ on ^*:TEXT:*:#:{
   else {
     ; Indent the second line so it lines up under the message text.
     ; Space + Ctrl-O pairs stop mIRC from collapsing the spaces.
-    var %offsetCount = $calc( $len($timestamp) + $len($nick(#,$nick).pnick) + 3 )
+    var %offsetCount = $calc( $len($timestamp) + $len(%pnick) + 3 )
     var %offset = $chr(124)
     var %j = 0
     while (%j < %offsetCount) {

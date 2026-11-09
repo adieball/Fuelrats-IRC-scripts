@@ -83,18 +83,18 @@ alias cthl {
 
 
 ; ---------- Events ----------
-; The ^ prefix suppresses mIRC's normal display. Lines that are not from a case client
-; are handed back to mIRC with haltdef, so they appear as usual.
+; The ^ prefix lets the script replace mIRC's normal display. For a case client the line
+; is echoed in colour and haltdef suppresses the default line. All other lines are left
+; alone (no haltdef), so mIRC shows them as usual.
 
 on ^*:TEXT:*:#fuelrats,#ratchat:{
   if (%spmode != 2) {
     var %case = $CTHL_Case($nick)
     if (%case != $null) {
       CTHL_Echo $chan $nick %case text $1-
-      halt
+      haltdef
     }
   }
-  haltdef
 }
 
 on ^*:TEXT:*:#beyond,#horizons,#odyssey,#drillrats,#drillrats2,#drillrats3:{
@@ -102,10 +102,9 @@ on ^*:TEXT:*:#beyond,#horizons,#odyssey,#drillrats,#drillrats2,#drillrats3:{
     var %case = $CTHL_Case($nick)
     if (%case != $null) {
       CTHL_Echo $chan $nick %case text $1-
-      halt
+      haltdef
     }
   }
-  haltdef
 }
 
 on ^*:ACTION:*:#fuelrats,#ratchat:{
@@ -113,10 +112,9 @@ on ^*:ACTION:*:#fuelrats,#ratchat:{
     var %case = $CTHL_Case($nick)
     if (%case != $null) {
       CTHL_Echo $chan $nick %case action $1-
-      halt
+      haltdef
     }
   }
-  haltdef
 }
 
 on ^*:ACTION:*:#beyond,#horizons,#odyssey,#drillrats,#drillrats2,#drillrats3:{
@@ -124,8 +122,7 @@ on ^*:ACTION:*:#beyond,#horizons,#odyssey,#drillrats,#drillrats2,#drillrats3:{
     var %case = $CTHL_Case($nick)
     if (%case != $null) {
       CTHL_Echo $chan $nick %case action $1-
-      halt
+      haltdef
     }
   }
-  haltdef
 }

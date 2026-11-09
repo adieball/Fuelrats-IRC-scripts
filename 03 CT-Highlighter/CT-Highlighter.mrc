@@ -56,8 +56,10 @@ alias -l CTHL_Case {
 alias -l CTHL_Echo {
   ; $1 = channel, $2 = nick, $3 = case number, $4 = text|action, $5- = message
   var %c = $CTHL_Color($3)
+  ; SeraphIRC can return a list position (e.g. 65) instead of the prefixed nick here,
+  ; so only accept the result if it really contains the nick; otherwise fall back to the plain nick.
   var %who = $nick($1,$2).pnick
-  if (%who == $null) var %who = $2
+  if ($2 !isin %who) var %who = $2
   var %body = $strip($5-,c)
   if ($4 == action) echo -ti2 $1 $chr(3) $+ %c $+ $chr(35) $+ $3 * %who %body
   else echo -ti2 $1 $chr(3) $+ %c $+ $chr(35) $+ $3 < $+ %who $+ > %body
